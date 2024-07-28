@@ -225,45 +225,6 @@ body{
     font-size: 21px;
 }
 
-/* Container per i pallini */
-#dots-container {
-    position: absolute;
-    top: -485px; /* Distanza dal bordo superiore */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-@media (max-width: 480px) and (orientation: portrait) {
-    #dots-container {
-        top: -420px; /* Distanza modificata dal bordo superiore per schermi in verticale */
-    }
-}
-
-
-/* Stili per i pallini */
-.dot {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #ddd;
-    transition: background-color 0.3s;
-}
-
-.dot.active {
-    background-color: #333;
-}
-
-/* Modifiche per visualizzazione touch */
-@media (hover: none) and (pointer: coarse) {
-    #prev, #next {
-        display: none; /* Nascondi pulsanti su dispositivi touch */
-    }
-}
-
 .btn-primary, .btn-white-outline {
     display: inline-block;
     font-family: "Raleway", sans-serif;
@@ -313,23 +274,11 @@ body{
   }
   
   @media (max-width: 767px) {
-  
-    .btn-primary:active, .btn-white-outline:active {
-      background-color: #333;
-      color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      transition: all 0.2s ease-in-out;
+    #prev, #next {
+        display: none;
     }
-    .btn-primary, .btn-white-outline {
-        padding: 8px 16px; /* Riduci il padding */
-        font-size: 14px; /* Riduci la dimensione del font */
-        border-radius: 8px; /* Riduci il border-radius */
-      }
-    
-      .button-container {
-        top: calc(50% + 100px); /* Regola la posizione verticale se necessario */
-      }
-    }
+}
+
 
   
 .button-container {
