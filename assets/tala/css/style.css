@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    margin: 0; 
+    font-family: "Pacifico", cursive;
+}
+
+.slider{
+    position: relative;
+    width: 100%;
+    height: 1080px;
+    background-image: url('https://i.postimg.cc/Yqp9bYks/day-6.png'); /* Percorso dell'immagine */
+    background-size: cover; /* Copre interamente il blocco */
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+    overflow: hidden;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: flex-start; /* Allinea al top con un margine superiore */
+    height: 100vh; /* Imposta l'altezza del contenitore al 100% della viewport */
+    position: relative; /* Necessario per posizionare il titolo assoluto rispetto al contenitore */
+}
+
+@keyframes slideUp3D {
+    0% {
+      opacity: 0;
+      transform: translateY(100px) rotateX(30deg) rotateY(30deg) scale(0.9);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(10px) rotateX(10deg) rotateY(10deg) scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotateX(0) rotateY(0) scale(1);
+    }
+  }
+  
+  .title1, .title2 {
+      position: absolute;
+      text-align: center;
+      font-family: "Anton", sans-serif;
+      font-weight: 400;
+      animation: slideUp3D 1s ease-out forwards;
+      transform-style: preserve-3d;
+  }
+  
+  .title1 {
+      color: rgb(255, 255, 255); /* Colore del testo */
+      top: 110px;
+      font-size: 110px;
+      text-shadow:
+          0 0 5px rgba(255, 255, 255, 0.8), 
+          0 0 15px rgba(255, 255, 255, 0.6), 
+          0 0 25px rgba(255, 255, 255, 0.4),
+          0 0 35px rgba(255, 255, 255, 0.4), 
+          0 0 45px rgba(255, 255, 255, 0.3), 
+          0 0 55px rgba(255, 255, 255, 0.2);
+  }
+  
+  .title2 {
+      color: rgb(255, 0, 0); /* Colore del testo */
+      top: 200px;
+      font-size: 170px;
+      text-shadow:
+          0 0 35px rgba(255, 0, 0, 0.4), 
+          0 0 45px rgba(255, 0, 0, 0.3), 
+          0 0 55px rgba(255, 0, 0, 0.2);
+  }
+  
+  
+  .cerchio {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 920px; /* Larghezza dell'ovale */
+    height: 1080px; /* Altezza dell'ovale */
+    border-radius: 50%; /* Rende l'elemento ovale */
+    outline: 1px dashed rgb(255, 255, 255); /* Bordo tratteggiato */
+    outline-offset: 20px; /* Distanza del bordo tratteggiato */
+    transform: translate(-50%, 5%); /* Centra l'ovale */
+    z-index: 0; /* Posiziona l'ovale dietro gli altri contenuti */
+    pointer-events: none; /* Impedisce l'interazione con l'ovale */
+}
+
+.images2{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    --rotate: 0deg;
+    transform: translate(-50%, 50%) rotate(var(--rotate));
+    width: 440px;
+    height: 1260px;
+    transition: transform 0.7s ease-in-out;
+}
+.images2 .item{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    rotate: calc(60deg * var(--i));
+}
+.images2 .item img{
+    height: 420px;
+}
+
+.content {
+    color: #ffffff;
+    position: absolute;
+    top: calc(50% + 260px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 350px;
+  }
+  
+  .content h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: xx-large;
+    background: linear-gradient(45deg, #5eff00, #00ff008f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 30px;
+    position: relative;
+    padding-bottom: 10px; /* Spazio per la linea sotto il testo */
+}
+
+    .des{
+        color: red;
+
+}
+
+.content h1::after {
+    content: "";
+    position: absolute;
+    left: 90px;
+    bottom: 0; /* Posiziona la linea sotto il testo */
+    width: 50%;
+    height: 1px; /* Altezza della linea */
+    background: #ffffff; /* Colore della linea */
+    border-radius: 1px; /* Angoli arrotondati per la linea */
+}
+
+
+.content .item{
+    display: none;
+}
+.content .item.active{
+    display: block;
+}
+@keyframes showContent{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }to{
+        opacity: 1;
+    }
+}
+.content .item.active h1{
+    opacity: 0;
+    animation: showContent 0.5s ease-in-out 1 forwards;
+}
+.content .item.active .des{
+    opacity: 0;
+    animation: showContent 0.5s 0.3s ease-in-out 1 forwards;
+}
+
+/* Container principale per slider */
+#slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altezza della viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Stili per i pulsanti circolari */
+#prev, #next {
+    position: absolute;
+    top: -550px; /* Distanza dal bordo superiore */
+    width: 60px;
+    height: 60px;
+    border: 2px solid #000; /* Bordo nero */
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.7),
+                4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#prev {
+    left: 420px; /* Distanza dal bordo sinistro */
+}
+
+#next {
+    right: 420px; /* Distanza dal bordo destro */
+}
+
+#prev:hover, #next:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.7),
+                6px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#prev:active, #next:active {
+    transform: scale(0.95);
+    box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.3),
+                inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+#prev i, #next i {
+    font-size: 21px;
+}
+
+/* Container per i pallini */
+#dots-container {
+    position: absolute;
+    top: -485px; /* Distanza dal bordo superiore */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+    #dots-container {
+        top: -420px; /* Distanza modificata dal bordo superiore per schermi in verticale */
+    }
+}
+
+
+/* Stili per i pallini */
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+/* Modifiche per visualizzazione touch */
+@media (hover: none) and (pointer: coarse) {
+    #prev, #next {
+        display: none; /* Nascondi pulsanti su dispositivi touch */
+    }
+}
+
+.btn-primary, .btn-white-outline {
+    display: inline-block;
+    font-family: "Raleway", sans-serif;
+    font-weight: 900;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .btn-primary {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.912);
+  }
+  
+  .btn-white-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+  .btn-primary:hover {
+    background-color: white;
+    color: red;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+    transform: scale(1.1) rotate(-2deg);
+  }
+  
+  .btn-white-outline:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    transform: scale(1.1) rotate(2deg);
+  }
+  
+  .btn-primary:active, .btn-white-outline:active {
+    transform: scale(0.95) translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 767px) {
+  
+    .btn-primary:active, .btn-white-outline:active {
+      background-color: #333;
+      color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease-in-out;
+    }
+    .btn-primary, .btn-white-outline {
+        padding: 8px 16px; /* Riduci il padding */
+        font-size: 14px; /* Riduci la dimensione del font */
+        border-radius: 8px; /* Riduci il border-radius */
+      }
+    
+      .button-container {
+        top: calc(50% + 100px); /* Regola la posizione verticale se necessario */
+      }
+    }
+
+  
+.button-container {
+    position: absolute;
+    top: calc(50% + -100px); /* Centra verticalmente e sposta in basso di 200px */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px; /* Spazio tra i pulsanti */
+}
+
+.btn-white-outline i {
+    margin-left: 6px; /* Spazio tra il testo e l'icona */
+  }
+
+.circle-btn {
+    background-color: #fff; /* Sfondo bianco */
+    border: 2px solid #ccc; /* Bordo grigio chiaro */
+    color: #333; /* Colore icona */
+    border-radius: 50%; /* Pulsante circolare */
+    width: 50px; /* Larghezza pulsante */
+    height: 50px; /* Altezza pulsante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transizione morbida */
+    padding: 0; /* Rimuove il padding */
+    outline: none; /* Rimuove il bordo di focus */
+}
+
+.circle-btn:hover {
+    background-color: #f0f0f0; /* Sfondo più scuro al passaggio del mouse */
+    border-color: #999; /* Bordo più scuro al passaggio del mouse */
+}
+
+.circle-btn i {
+    font-size: 20px; /* Dimensione dell'icona */
+}

@@ -1,0 +1,10 @@
+@font-face {
+   font-family: 'Raleway-Black';
+   font-display: swap;
+   src: url('Raleway-Black/font.ttf');
+}
+@font-face {
+   font-family: 'Pacifico-Regular';
+   font-display: swap;
+   src: url('Pacifico-Regular/font.ttf');
+}
