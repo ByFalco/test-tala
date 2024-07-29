@@ -279,14 +279,11 @@ body{
     }
     .btn-primary, .btn-white-outline {
         padding: 8px 16px; /* Riduci il padding */
-        font-size: 10px; /* Riduci la dimensione del font */
+        font-size: 14px; /* Riduci la dimensione del font */
         border-radius: 10px; /* Riduci il border-radius */
     }
 }
-
-
-
-  
+ 
 .button-container {
     position: absolute;
     top: calc(50% + -100px); /* Centra verticalmente e sposta in basso di 200px */
