@@ -277,7 +277,13 @@ body{
     #prev, #next {
         display: none;
     }
+    .btn-primary, .btn-white-outline {
+        padding: 8px 16px; /* Riduci il padding */
+        font-size: 10px; /* Riduci la dimensione del font */
+        border-radius: 10px; /* Riduci il border-radius */
+    }
 }
+
 
 
   
