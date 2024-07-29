@@ -185,60 +185,46 @@ body{
     animation: showContent 0.5s 0.3s ease-in-out 1 forwards;
 }
 
-/* Container principale per slider */
-#slider-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Altezza della viewport */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Stili per i pulsanti circolari */
 #prev, #next {
-    position: absolute;
-    top: -450px; /* Distanza dal bordo superiore */
-    width: 60px;
-    height: 60px;
-    border: 2px solid #000; /* Bordo nero */
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #333;
+    background-color: #000000; /* Sfondo bianco */
+    border: 2px solid #ccc; /* Bordo grigio chiaro */
+    color: rgb(255, 255, 255); /* Colore dell'icona per visibilità */
+    border-radius: 50%; /* Pulsante circolare */
+    width: 51px; /* Larghezza pulsante */
+    height: 51px; /* Altezza pulsante */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
-                inset -4px -4px 8px rgba(255, 255, 255, 0.7),
-                4px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; /* Transizione morbida */
+    padding: 0; /* Rimuove il padding */
+    outline: none; /* Rimuove il bordo di focus */
+    position: absolute;
+    top: 58%;
+    transform: translateY(-50%);
+    z-index: 1000; /* Assicurati che i pulsanti siano sopra gli altri contenuti */
 }
 
 #prev {
-    left: 580px; /* Distanza dal bordo sinistro */
+    left: 540px; /* Distanza dal bordo sinistro */
 }
 
 #next {
-    right: 580px; /* Distanza dal bordo destro */
+    right: 540px; /* Distanza dal bordo destro */
 }
 
 #prev:hover, #next:hover {
     background-color: rgba(255, 255, 255, 1);
-    transform: scale(1.05);
-    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
-                inset -4px -4px 8px rgba(255, 255, 255, 0.7),
-                6px 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: #333; /* Bordo più scuro al passaggio del mouse */
+    color: #333; /* Colore icona */
 }
 
 #prev:active, #next:active {
     transform: scale(0.95);
-    box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.3),
-                inset -6px -6px 12px rgba(255, 255, 255, 0.9);
 }
 
 #prev i, #next i {
-    font-size: 21px;
+    font-size: 21px; /* Dimensione dell'icona */
 }
 
 .btn-primary, .btn-white-outline {
@@ -302,7 +288,7 @@ body{
     }
 }
  
-.button-container {
+.btn-container {
     position: absolute;
     top: calc(50% + -100px); /* Centra verticalmente e sposta in basso di 200px */
     left: 50%;
@@ -313,30 +299,4 @@ body{
 
 .btn-white-outline i {
     margin-left: 6px; /* Spazio tra il testo e l'icona */
-}
-
-
-.circle-btn {
-    background-color: #fff; /* Sfondo bianco */
-    border: 2px solid #ccc; /* Bordo grigio chiaro */
-    color: #333; /* Colore icona */
-    border-radius: 50%; /* Pulsante circolare */
-    width: 50px; /* Larghezza pulsante */
-    height: 50px; /* Altezza pulsante */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Transizione morbida */
-    padding: 0; /* Rimuove il padding */
-    outline: none; /* Rimuove il bordo di focus */
-}
-
-.circle-btn:hover {
-    background-color: #f0f0f0; /* Sfondo più scuro al passaggio del mouse */
-    border-color: #999; /* Bordo più scuro al passaggio del mouse */
-}
-
-.circle-btn i {
-    font-size: 20px; /* Dimensione dell'icona */
 }
