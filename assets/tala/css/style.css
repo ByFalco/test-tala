@@ -203,24 +203,25 @@ body{
     top: 58%;
     transform: translateY(-50%);
     z-index: 1000; /* Assicurati che i pulsanti siano sopra gli altri contenuti */
+    box-sizing: border-box;
 }
 
 #prev {
-    left: 540px; /* Distanza dal bordo sinistro */
+    left: 32%; /* Distanza dal bordo sinistro */
 }
 
 #next {
-    right: 540px; /* Distanza dal bordo destro */
+    right: 32%; /* Distanza dal bordo destro */
 }
 
 #prev:hover, #next:hover {
     background-color: rgba(255, 255, 255, 1);
-    border-color: #333; /* Bordo più scuro al passaggio del mouse */
+    border-color: #000000; /* Bordo più scuro al passaggio del mouse */
     color: #333; /* Colore icona */
 }
 
 #prev:active, #next:active {
-    transform: scale(0.95);
+    transform: scale(0.99);
 }
 
 #prev i, #next i {

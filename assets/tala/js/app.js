@@ -10,13 +10,13 @@ let countItem = items.length;
 let rotateAdd = 360 / countItem;
 
 function nextSlider() {
-    active = active + 1 > countItem - 1 ? 0 : active + 1;
+    active = (active + 1) % countItem; // Avanza all'elemento successivo
     rotate = rotate + rotateAdd; 
     show();
 }
 
 function prevSlider() {
-    active = active - 1 < 0 ? countItem - 1 : active - 1;
+    active = (active - 1 + countItem) % countItem; // Torna all'elemento precedente
     rotate = rotate - rotateAdd; 
     show();     
 }
@@ -32,10 +32,8 @@ function show() {
     });
 }
 
-next.onclick = nextSlider;
-prev.onclick = prevSlider;
-
-//const autoNext = setInterval(nextSlider, 8000);
+next.addEventListener('click', nextSlider);
+prev.addEventListener('click', prevSlider);
 
 // Gestione swipe
 let startX = 0;
