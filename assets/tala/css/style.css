@@ -279,8 +279,8 @@ body{
     }
     .btn-primary, .btn-white-outline {
         padding: 8px 16px; /* Riduci il padding */
-        font-size: 14px; /* Riduci la dimensione del font */
-        border-radius: 8px; /* Riduci il border-radius */
+        font-size: 12px; /* Riduci la dimensione del font */
+        border-radius: 9px; /* Riduci il border-radius */
     }
 }
  
