@@ -111,7 +111,7 @@ body{
 .content {
     color: #ffffff;
     position: absolute;
-    top: calc(50% + 260px);
+    top: calc(50% + 300px);
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;

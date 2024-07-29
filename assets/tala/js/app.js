@@ -35,7 +35,7 @@ function show() {
 next.onclick = nextSlider;
 prev.onclick = prevSlider;
 
-const autoNext = setInterval(nextSlider, 8000);
+//const autoNext = setInterval(nextSlider, 8000);
 
 // Gestione swipe
 let startX = 0;
