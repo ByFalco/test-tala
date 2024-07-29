@@ -50,27 +50,43 @@ body{
   }
   
   .title1 {
-      color: rgb(255, 255, 255); /* Colore del testo */
-      top: 110px;
-      font-size: 110px;
-      text-shadow:
-          0 0 5px rgba(255, 255, 255, 0.8), 
-          0 0 15px rgba(255, 255, 255, 0.6), 
-          0 0 25px rgba(255, 255, 255, 0.4),
-          0 0 35px rgba(255, 255, 255, 0.4), 
-          0 0 45px rgba(255, 255, 255, 0.3), 
-          0 0 55px rgba(255, 255, 255, 0.2);
-  }
+    color: rgb(255, 255, 255); /* Colore del testo */
+    top: 110px;
+    font-size: 110px;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.5), /* Ombra leggera per migliorare la leggibilità */
+        4px 4px 8px rgba(0, 0, 0, 0.3),
+        6px 6px 12px rgba(0, 0, 0, 0.2),
+        8px 8px 16px rgba(0, 0, 0, 0.1);
+}
   
   .title2 {
-      color: rgb(255, 0, 0); /* Colore del testo */
-      top: 200px;
-      font-size: 170px;
-      text-shadow:
-          0 0 35px rgba(255, 0, 0, 0.4), 
-          0 0 45px rgba(255, 0, 0, 0.3), 
-          0 0 55px rgba(255, 0, 0, 0.2);
-  }
+    color: rgb(255, 0, 0); /* Colore del testo */
+    top: 200px;
+    font-size: 170px;
+    text-shadow:
+        0 0 10px rgba(255, 0, 0, 0.5), 
+        0 0 20px rgba(255, 0, 0, 0.4), 
+        0 0 30px rgba(255, 0, 0, 0.3),
+        0 0 40px rgba(255, 0, 0, 0.2),
+        0 0 50px rgba(255, 0, 0, 0.1),
+        0 0 10px rgba(255, 255, 255, 0.8), /* Aggiunge un bordo luminoso bianco */
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+    -webkit-text-stroke: 2px white; /* Bordo bianco intorno al testo */
+}
+
+  @media (max-width: 767px) {
+    .title1 {
+        font-size: 85px; /* Riduce la dimensione del font */
+        top: 185px; /* Modifica la posizione verticale se necessario */
+    }
+
+    .title2 {
+        font-size: 115px; /* Riduce la dimensione del font */
+        top: 260px; /* Modifica la posizione verticale se necessario */
+    }
+}
   
   
   .cerchio {
@@ -182,7 +198,7 @@ body{
 /* Stili per i pulsanti circolari */
 #prev, #next {
     position: absolute;
-    top: -550px; /* Distanza dal bordo superiore */
+    top: -450px; /* Distanza dal bordo superiore */
     width: 60px;
     height: 60px;
     border: 2px solid #000; /* Bordo nero */
@@ -200,11 +216,11 @@ body{
 }
 
 #prev {
-    left: 420px; /* Distanza dal bordo sinistro */
+    left: 580px; /* Distanza dal bordo sinistro */
 }
 
 #next {
-    right: 420px; /* Distanza dal bordo destro */
+    right: 580px; /* Distanza dal bordo destro */
 }
 
 #prev:hover, #next:hover {
@@ -238,42 +254,44 @@ body{
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-  }
+}
   
-  .btn-primary {
-    background-color: red;
-    color: white;
+.btn-primary {
+    background-color: white;
+    color: red;
     border: 2px solid red;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.912);
-  }
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.912), /* Ombra principale */
+                0 0 20px rgba(255, 255, 255, 0.5); /* Ombra neon */
+}
   
-  .btn-white-outline {
+.btn-white-outline {
     background-color: transparent;
     color: white;
     border: 2px solid white;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  }
+}
   
-  .btn-primary:hover {
-    background-color: white;
-    color: red;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+.btn-primary:hover {
+    background-color: red;
+    color: white;
+    box-shadow: 0 0 20px rgb(255, 255, 255), /* Ombra principale */
+                0 0 30px rgba(255, 255, 255, 0.7); /* Ombra neon più intensa */
     transform: scale(1.1) rotate(-2deg);
-  }
+}
   
-  .btn-white-outline:hover {
+.btn-white-outline:hover {
     background-color: black;
     color: white;
     box-shadow: 0 0 20px rgba(255, 255, 255, 1);
     transform: scale(1.1) rotate(2deg);
-  }
+}
   
-  .btn-primary:active, .btn-white-outline:active {
+.btn-primary:active, .btn-white-outline:active {
     transform: scale(0.95) translateY(2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+}
   
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
     #prev, #next {
         display: none;
     }
@@ -295,7 +313,8 @@ body{
 
 .btn-white-outline i {
     margin-left: 6px; /* Spazio tra il testo e l'icona */
-  }
+}
+
 
 .circle-btn {
     background-color: #fff; /* Sfondo bianco */
